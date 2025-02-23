@@ -1,5 +1,4 @@
 "use client"
-import { setIsDarkMode } from '@/state';
 import { useGetUsersQuery } from '@/state/api'
 import React from 'react'
 import { useAppSelector } from '../redux';
