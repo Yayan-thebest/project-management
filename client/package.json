@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --quiet"
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.9.1",
