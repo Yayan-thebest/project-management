@@ -1,5 +1,4 @@
-{/** For AC2 */}
-module.export ={
+module.exports ={
     apps: [
         {
             name: "project-management",
