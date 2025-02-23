@@ -1,8 +1,7 @@
+import React from 'react';
 import { useAppSelector } from '@/app/redux';
 import Header from '@/components/Header';
 import { useGetTasksQuery } from '@/state/api';
-import { DisplayOption, ViewMode } from 'gantt-task-react';
-import React, { useState } from 'react';
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { dataGridClassNames, dataGridSxStyles } from '@/lib/utils';
 
@@ -69,10 +68,10 @@ const columns: GridColDef[] = [
 
 const TableView = ({id, setIsModalNewTaskOpen}: Props) => {
         const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
-        const [_, __] = useState<DisplayOption>({
+        {/*const [displayOptions, setDisplayOptions] = useState<DisplayOption>({
             viewMode: ViewMode.Month,
             locale: "en-US",
-          });
+          });*/}
         const { data: tasks, isLoading, error} = useGetTasksQuery({projectId: Number(id)});
     
         if(isLoading) return <div>Loading...</div>
