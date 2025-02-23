@@ -1,6 +1,6 @@
 import { useGetTasksQuery, useUpdateTaskStatusMutation } from '@/state/api';
 import React from 'react';
-import {DndProvider, DropTargetMonitor, useDrag, useDrop} from "react-dnd";
+import {DndProvider, DragSourceMonitor, DropTargetMonitor, useDrag, useDrop} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import { Task as TaskType } from "@/state/api";
 import { EllipsisVertical, MessageSquareMore, Plus } from 'lucide-react';
@@ -126,7 +126,7 @@ const Task = ({task}: TaskProps) =>{
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "task",
         item: {id: task.id},
-        collect: (monitor: any) => ({
+        collect: (monitor: DragSourceMonitor ) => ({
           isDragging: !!monitor.isDragging(),
         }),
       }));

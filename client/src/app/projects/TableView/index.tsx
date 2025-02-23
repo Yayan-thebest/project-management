@@ -69,7 +69,7 @@ const columns: GridColDef[] = [
 
 const TableView = ({id, setIsModalNewTaskOpen}: Props) => {
         const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
-        const [] = useState<DisplayOption>({
+        const [_, __] = useState<DisplayOption>({
             viewMode: ViewMode.Month,
             locale: "en-US",
           });
