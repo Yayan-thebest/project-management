@@ -93,13 +93,14 @@ export const api = createApi({
   reducerPath: "api",
   tagTypes: ["Projects", "Tasks", "Users", "Teams"],
   endpoints: (build) => ({
+    // for aws cognito
     getAuthUser: build.query({
       queryFn: async (_, _queryApi, _extraoptions, fetchWithBQ) => {
         try {
           const user = await getCurrentUser();
           const session = await fetchAuthSession();
           if (!session) throw new Error("No session found");
-          const { userSub } = session;
+          const { userSub } = session; // cognito id
          // const { accessToken } = session.tokens ?? {};
 
           const userDetailsResponse = await fetchWithBQ(`users/${userSub}`);
