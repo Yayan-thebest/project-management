@@ -1,7 +1,6 @@
 "use client";
 import Header from '@/components/Header';
 import { useGetAuthUserQuery } from '@/state/api';
-import { signOut } from 'aws-amplify/auth';
 import React from 'react'
 
 const Settings = () => {
