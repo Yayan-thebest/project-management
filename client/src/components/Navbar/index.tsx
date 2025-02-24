@@ -71,7 +71,7 @@ const Navbar = () => {
         {/** User info */}
         <div className='hidden items-center justify-between md:flex'>
           <div className='items-center flex size-9 justify-center'>
-            {!!currentUserDetails?.profilePictureUrl ? (
+            {!currentUserDetails?.profilePictureUrl ? (
               <Image
                 src={`https:pm-s3-images-ym.s3.us-east-1.amazonaws.com/${currentUserDetails.profilePictureUrl}`}
                 alt={currentUserDetails?.username || "User Profile Picture"}
