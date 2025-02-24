@@ -14,13 +14,7 @@ const Settings = () => {
     };
 
     const {data: currentUser } = useGetAuthUserQuery({});
-    const handleSignOut = async () => {
-      try {
-        await signOut();
-      } catch (error) {
-        console.error("Error signing out: ", error);
-      }
-    };
+
     if(!currentUser) return null;
     const currentUserDetails = currentUser?.userDetails;
         
