@@ -21,7 +21,6 @@ export const getUser = async (req: Request, res: Response): Promise<void> => {
     const user = await prisma.user.findUnique({
       where: {
         cognitoId: cognitoId,
-
       }
     });
     res.json(user);
